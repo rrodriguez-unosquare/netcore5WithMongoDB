@@ -4,4 +4,15 @@
     Layout = "/Pages/Shared/_Layout.cshtml";
 }
 
-<p> Book Name : @Model.Book.BookName</p>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger validation">
+
+        <span>Please correct the following errors</span>
+    </div>
+    @Html.AntiForgeryToken()
+    Book Name:  <input asp-for="BookName"/> <br />
+    Price: <input asp-for="Price" /><br />
+    Category: <input asp-for="Category" /><br />
+    Author: <input asp-for="Author" /><br />
+    <button type="submit">Save Changes</button>
+</form>
