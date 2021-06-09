@@ -11,26 +11,33 @@
         Total books: <span>@Model.Books.Count</span>
     </p>
 
-    <div class="row">
-        <a asp-area="Book" asp-page="New"  class="btn btn-primary">New Book</a>
+    <div class="row" style="margin-bottom:10px;">
+        <div class="col-12">
+            <a asp-area="Book" asp-page="New" class="btn btn-primary float-left">New Book</a>
+        </div>
+        
     </div>
 
+    <div class="row">
+        @foreach (var book in Model.Books)
+        {
+            <div class="col-3">
+                <div class="card " style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.BookName</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@book.Category</h6>
+                        <p class="card-text">@book.Author</p>
+                        <a asp-area="Book" asp-page="/Details" asp-route-id="@book.Id" class="card-link">See Details</a>
 
-    @foreach (var book in Model.Books)
-    {
+                        <a asp-area="Book" asp-page="/Edit" asp-route-id="@book.Id" class="card-link">Edit</a>
 
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">@book.BookName</h5>
-                <h6 class="card-subtitle mb-2 text-muted">@book.Category</h6>
-                <p class="card-text">@book.Author</p>
-                <a asp-area="Book" asp-page="/Details" asp-route-id="@book.Id" class="card-link">See Details</a>
-
-                <a asp-area="Book" asp-page="/Edit" asp-route-id="@book.Id" class="card-link">Edit</a>
-
-                <a asp-area="Book" asp-page="/DeleteConfirmation" asp-route-id="@book.Id" class="card-link">Delete</a>
+                        <a asp-area="Book" asp-page="/DeleteConfirmation" asp-route-id="@book.Id" class="card-link">Delete</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    }
+
+
+        }
+    </div>
 
 </div>

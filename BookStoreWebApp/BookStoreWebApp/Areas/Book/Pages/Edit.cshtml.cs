@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Interfaces.Services;
 using Domain.Models.Mongo;
-using Domain.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -65,12 +64,15 @@ namespace BookStoreApi.Areas.Book.Pages
 
             var book = _bookService.Get(this.Id);
 
-            book.BookName = this.BookName;
-            book.Author = this.Author;
-            book.Price = this.Price;
-            book.Category = this.Category;
+            if(book != null)
+            {
+                book.BookName = this.BookName;
+                book.Author = this.Author;
+                book.Price = this.Price;
+                book.Category = this.Category;
 
-            _bookService.Update(this.Id, book);
+                _bookService.Update(this.Id, book);
+            }
 
             return RedirectToPage("BookStore");
 
