@@ -35,6 +35,9 @@ namespace BookStoreApi.Areas.Book.Pages
         [Required(ErrorMessage = "Author is required")]
         public string Author { get; set; }
 
+        [BindProperty]
+        [Required(ErrorMessage = "Description is required")]
+        public string Description { get; set; }
 
         public void OnGet()
         {
@@ -53,7 +56,8 @@ namespace BookStoreApi.Areas.Book.Pages
                 BookName = this.BookName,
                 Author = this.Author,
                 Price = this.Price,
-                Category = this.Category
+                Category = this.Category,
+                Description = this.Description
             };
 
             _bookService.Create(book);
