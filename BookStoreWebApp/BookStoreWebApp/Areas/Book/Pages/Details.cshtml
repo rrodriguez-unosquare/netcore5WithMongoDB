@@ -4,7 +4,36 @@
     Layout = "/Pages/Shared/_Layout.cshtml";
 }
 
-<p> Book Name : @Model.Book.BookName</p>
-<p> Author : @Model.Book.Author</p>
-<p> Category : @Model.Book.Category</p>
-<p> Price : @Model.Book.Price</p>
+<h2>Book Details</h2>
+
+
+<form>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Book Name</label>
+        <div class="col-sm-10">
+            <input type="text" readonly class="form-control" id="BookName" value="@Model.Book.BookName">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10">
+            <input type="text" readonly class="form-control" id="Author" value="@Model.Book.Author">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+            <input type="text" readonly class="form-control" id="Category" value="@Model.Book.Category">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input type="text" readonly class="form-control" id="Price" value="@Model.Book.Price">
+        </div>
+    </div>
+
+</form>
