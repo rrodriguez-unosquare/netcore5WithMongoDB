@@ -24,6 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '$(Build.SourcesDirectory)/BookStoreWebApp/BookStoreWebApp/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/BookStoreWebApp'
         tags: |
           $(tag)
