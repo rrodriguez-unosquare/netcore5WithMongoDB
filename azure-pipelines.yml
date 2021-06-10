@@ -33,3 +33,4 @@ stages:
         containerRegistry: 'dockerRomancadete'
         repository: 'romancadete/netcore-bookstore'
         command: 'push'
+        tags: $(tag)
