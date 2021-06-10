@@ -7,14 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["BookStoreWebApp.csproj", "BookStoreWebApp/"]
-RUN dotnet restore "/BookStoreWebApp.csproj"
+COPY ["BookStoreWebApp/BookStoreWebApp.csproj", "./"]
+COPY ["Infrastructure/Infrastructure.csproj", "./"]
+COPY ["Domain/Domain.csproj", "./"]
+COPY ["Application/Application.csproj", "./"]
+RUN dotnet restore "BookStoreWebApp.csproj"
 COPY . .
-WORKDIR "/src/BookStoreWebApp"
-RUN dotnet build "BookStoreWebApp.csproj" -c Release -o /app/build
+WORKDIR "/src"
+RUN dotnet build "BookStoreWebApp/BookStoreWebApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "BookStoreWebApp.csproj" -c Release -o /app/publish
+RUN dotnet publish "BookStoreWebApp/BookStoreWebApp.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
