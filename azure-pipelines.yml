@@ -27,3 +27,9 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/BookStoreWebApp/Dockerfile'
         tags: |
           $(tag)
+    - task: Docker@2
+      displayName: Push an image
+      inputs:
+        containerRegistry: 'dockerRomancadete'
+        repository: 'netcore-bookstore'
+        command: 'push'
