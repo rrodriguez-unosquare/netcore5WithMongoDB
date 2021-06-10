@@ -31,5 +31,5 @@ stages:
       displayName: Push an image
       inputs:
         containerRegistry: 'dockerRomancadete'
-        repository: 'netcore-bookstore'
+        repository: 'romancadete/netcore-bookstore'
         command: 'push'
