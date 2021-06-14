@@ -1,11 +1,14 @@
+using BookStoreWebApp.Services;
 using Domain.Interfaces.Models;
 using Domain.Models.Settings;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System;
@@ -28,6 +31,8 @@ namespace BookStoreApi
         public void ConfigureServices(IServiceCollection services)
         {
             DependencyInjection.ConfigureServices(services, Configuration);
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IRazorPartialToStringRenderer, RazorPartialToStringRenderer>();
 
             services.AddControllers();
 
@@ -48,7 +53,7 @@ namespace BookStoreApi
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
