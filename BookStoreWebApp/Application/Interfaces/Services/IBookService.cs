@@ -1,4 +1,5 @@
-﻿using Domain.Models.Mongo;
+﻿using Domain.Dtos;
+using Domain.Models.Mongo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace Application.Interfaces.Services
         public void Remove(Book bookIn);
 
         public void Remove(string id);
+
+        public Task<SearchBooksResponseDto> SearchAsync(SearchBooksDto dto);
     }
 }

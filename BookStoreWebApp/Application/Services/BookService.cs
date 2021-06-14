@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.Services;
+using Domain.Dtos;
 using Domain.Interfaces.Models;
 using Domain.Models.Mongo;
 using MongoDB.Driver;
@@ -21,6 +22,22 @@ namespace Application.Services
 
             _books = database.GetCollection<Book>(settings.BooksCollectionName);
         }
+
+        public async Task<SearchBooksResponseDto> SearchAsync(SearchBooksDto dto)
+        {
+            var query = _books.Find(x => x.Author.Contains(dto.CriteriaText) || x.BookName.Contains(dto.CriteriaText) || x.Category.Contains(dto.CriteriaText));
+            var totalTask = query.CountDocumentsAsync();
+            var itemsTask = query.Skip(dto.PageNumber -1).Limit(dto.PageSize).ToListAsync();
+            await Task.WhenAll(totalTask, itemsTask);
+            var response = new SearchBooksResponseDto(itemsTask.Result)
+            {
+                TotalItems = totalTask.Result,
+
+            };
+
+            return response;
+        }
+
 
         public List<Book> Get() =>
             _books.Find(book => true).ToList();
