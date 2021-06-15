@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace BookStoreApi.Pages
 {
-    [ValidateAntiForgeryToken]
+    [IgnoreAntiforgeryToken]
     public class BookStoreModel : PageModel
     {
         private readonly IBookService _bookService;

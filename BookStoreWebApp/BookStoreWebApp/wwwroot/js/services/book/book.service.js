@@ -7,10 +7,10 @@
             url: '/BookStore?handler=SearchBooks',
             type: 'POST',
             dataType: "json",
-            headers : {
-                RequestVerificationToken:
-                    $('input:hidden[name="__RequestVerificationToken"]').val()
-            },
+            //headers : {
+            //    RequestVerificationToken:
+            //        $('input:hidden[name="__RequestVerificationToken"]').val()
+            //},
             data: dto
         })
             .done(function (result) {

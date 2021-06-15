@@ -13,7 +13,7 @@
 
     <div class="row" style="margin-bottom:10px;">
 
-        @Html.AntiForgeryToken()
+        
         <div class="input-group mb-3">
             <input type="text" id="txt-search" class="form-control" placeholder="Search by author, book name or category" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
@@ -32,9 +32,11 @@
     </div>
 
     <div class="row" id="books-result">
-        @await Html.PartialAsync("~/Pages/Shared/_BooksResult.cshtml", Model.BookResult)
+        
     </div>
 
+
+    <button id="btn-loadmore" type="button" class="btn btn-primary btn-lg btn-block" style="display:none;">Load More</button>
 </div>
 
 @section Scripts {

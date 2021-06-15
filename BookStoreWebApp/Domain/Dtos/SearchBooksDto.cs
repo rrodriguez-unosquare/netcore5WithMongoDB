@@ -48,6 +48,8 @@ namespace Domain.Dtos
 
         public long TotalItems { get; set; }
 
+        public long ItemsInPage { get; set; }
+
         public int CurrentPage { get; set; }
 
         public object Data { get; set; }

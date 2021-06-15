@@ -32,6 +32,7 @@ namespace Application.Services
             var response = new SearchBooksResponseDto(itemsTask.Result)
             {
                 TotalItems = totalTask.Result,
+                ItemsInPage = itemsTask.Result.Count
 
             };
 
