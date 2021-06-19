@@ -35,6 +35,6 @@ stages:
         command: 'buildAndPush'
         containerRegistry: 'dockerRomancadete'
         repository: 'romancadete/book-api'
-        dockerfile: '$(Build.SourcesDirectory)/BookStoreWebApp/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/BookStoreWebApp/DockerfileApi'
         tags: |
           $(tag)
