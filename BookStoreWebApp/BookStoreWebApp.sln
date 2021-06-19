@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStoreWebApp", "BookStoreWebApp\BookStoreWebApp.csproj", "{4CE4E910-573E-4480-81B0-422BB629A190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStoreWebApp", "BookStoreWebApp\BookStoreWebApp.csproj", "{4CE4E910-573E-4480-81B0-422BB629A190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{C9045C79-E72B-4180-A99F-89252380DD7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{C9045C79-E72B-4180-A99F-89252380DD7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{0005F148-8B17-4B8E-B850-49BEB6753902}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{0005F148-8B17-4B8E-B850-49BEB6753902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F53F18F4-FF76-4C36-81B0-1CD8710317EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{F53F18F4-FF76-4C36-81B0-1CD8710317EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApi", "BookApi\BookApi.csproj", "{5144E80D-1E86-4817-9D00-DEE717002659}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F53F18F4-FF76-4C36-81B0-1CD8710317EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F53F18F4-FF76-4C36-81B0-1CD8710317EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F53F18F4-FF76-4C36-81B0-1CD8710317EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5144E80D-1E86-4817-9D00-DEE717002659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5144E80D-1E86-4817-9D00-DEE717002659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5144E80D-1E86-4817-9D00-DEE717002659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5144E80D-1E86-4817-9D00-DEE717002659}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

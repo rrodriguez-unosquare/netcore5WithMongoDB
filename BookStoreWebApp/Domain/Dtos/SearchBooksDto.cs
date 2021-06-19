@@ -41,9 +41,14 @@ namespace Domain.Dtos
     {
         private List<Book> _books;
 
+        public SearchBooksResponseDto()
+        {
+
+        }
+
         public SearchBooksResponseDto(List<Book> books)
         {
-            this._books = books;
+            this.Books = books;
         }
 
         public long TotalItems { get; set; }
@@ -52,12 +57,9 @@ namespace Domain.Dtos
 
         public int CurrentPage { get; set; }
 
-        public object Data { get; set; }
         public string Html { get; set; }
 
-        public List<Book> GetBooks()
-        {
-            return this._books;
-        }
+        public List<Book> Books { get; set; }
+
     }
 }

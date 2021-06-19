@@ -1,24 +1,3 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  name: ingress
-spec:
-  rules:
-  - host: ingress1-rrodriguez-unosquare.cloud.okteto.net
-    http:
-      paths:
-      - backend:
-          serviceName: bookstore-demonetcore
-          servicePort: 80
-        path: /
-  tls:
-  - hosts:
-    - ingress1-rrodriguez-unosquare.cloud.okteto.net
-
----
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -52,7 +31,7 @@ spec:
         app: bookstore-demonetcore
     spec:
       containers:
-      - image: romancadete/netcore-bookstore:361
+      - image: romancadete/netcore-bookstore:373
         name: bookstore-demonetcore
         ports:
           - containerPort: 80

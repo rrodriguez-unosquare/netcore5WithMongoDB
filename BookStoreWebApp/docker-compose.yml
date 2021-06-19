@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  bookapi:
+    image: ${DOCKER_REGISTRY-}bookapi
+    build:
+      context: .
+      dockerfile: DockerfileApi
+
+  bookstorewebapp:
+    image: ${DOCKER_REGISTRY-}netcore-bookstore
+    build:
+      context: .
+      dockerfile: Dockerfile
+
