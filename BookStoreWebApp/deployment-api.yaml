@@ -5,7 +5,7 @@ metadata:
   labels:
     app: book-store
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       service: book-api
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: book-api
-          image: romancadete/book-api:377
+          image: romancadete/book-api:378
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

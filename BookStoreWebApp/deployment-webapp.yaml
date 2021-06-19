@@ -5,7 +5,7 @@ metadata:
   labels:
     app: book-store
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       service: webapp
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: romancadete/netcore-bookstore:377
+          image: romancadete/netcore-bookstore:378
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
