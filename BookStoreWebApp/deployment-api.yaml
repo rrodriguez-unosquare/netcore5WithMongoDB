@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bookApi
+  name: book-api
   labels:
     app: book-store
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: bookApi
+      service: book-api
   template:
     metadata:
       labels:
         app: book-store
-        service: bookApi
+        service: book-api
     spec:
       containers:
-        - name: bookApi
-          image: romancadete/book-api:373
+        - name: book-api
+          image: romancadete/book-api:377
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -29,14 +29,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bookApi
+  name: book-api
   labels:
     app: book-store
-    service: bookApi
+    service: book-api
 spec:
   ports:
     - port: 80
       targetPort: 80
       protocol: TCP
   selector:
-    service: bookApi
+    service: book-api

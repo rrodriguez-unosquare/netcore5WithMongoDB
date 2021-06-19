@@ -52,7 +52,7 @@ namespace BookStoreApi.Pages
                 using (var client = new HttpClient())
                 {
                     var jsonInString = JsonConvert.SerializeObject(dto);
-                    var uri = Environment.GetEnvironmentVariable("BookStoreApiBaseAddress") + "api/books/search";
+                    var uri = "http://book-api/api/books/search";
 
                     var httpResponse = await client.PostAsync(uri, new StringContent(jsonInString, Encoding.UTF8, "application/json"));
 

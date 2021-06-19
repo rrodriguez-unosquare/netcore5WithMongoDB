@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: romancadete/netcore-bookstore:373
+          image: romancadete/netcore-bookstore:377
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -26,7 +26,7 @@ spec:
             - name: ASPNETCORE_URLS
               value: http://+:80
             - name: BookStoreApiBaseAddress
-              value: http://bookApi
+              value: http://book-api/
 ---
 apiVersion: v1
 kind: Service
