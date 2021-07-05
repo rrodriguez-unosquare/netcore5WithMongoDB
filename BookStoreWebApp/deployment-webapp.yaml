@@ -27,6 +27,8 @@ spec:
               value: http://+:80
             - name: BookStoreApiBaseAddress
               value: http://book-api/
+            - name: BookstoreDatabaseSettings__ConnectionString
+              value: mongodb://rrodriguez:N@v@l.2021@cluster0-shard-00-00.eozgy.mongodb.net:27017,cluster0-shard-00-01.eozgy.mongodb.net:27017,cluster0-shard-00-02.eozgy.mongodb.net:27017/BookstoreDb?ssl=true&replicaSet=atlas-1rxc7q-shard-0&authSource=admin&retryWrites=true&w=majority
 ---
 apiVersion: v1
 kind: Service
