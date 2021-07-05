@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: book-api
-          image: romancadete/book-api:378
+          image: romancadete/book-api:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

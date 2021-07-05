@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: romancadete/netcore-bookstore:378
+          image: romancadete/netcore-bookstore:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
